@@ -1,0 +1,113 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7, #d16ba5);
+    min-height: 100vh;
+}
+
+/* Menu */
+.menu {
+    max-width: 650px;
+    margin: 50px auto;
+    background: rgba(255,250,243,0.95);
+    padding: 30px;
+    border-radius: 16px;
+    border: 8px double #8b2f4b;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.menu h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #8b2f4b;
+    letter-spacing: 2px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dotted #d8a1b3;
+}
+
+.menu li:last-child {
+    border-bottom: none;
+}
+
+.menu span {
+    color: #b8325b;
+    font-weight: bold;
+}
+
+/* Sakura container */
+.sakura {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Sakura petals */
+.sakura span {
+    position: absolute;
+    top: -5%;
+    animation: fall linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+/* Remove last border */
+.menu > div:last-child {
+    border-bottom: none;
+}
+
+/* Category Title */
+.menu h2 {
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #3b2f2f;
+    text-transform: uppercase;
+}
+
+/* Food List */
+.menu ul {
+    list-style: none;
+}
+
+/* Menu Item */
+.menu li {
+    padding: 10px 0;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #aaa;
+}
+
+/* Remove last item border */
+.menu li:last-child {
+    border-bottom: none;
+}
+
+/* Price */
+.menu li span {
+    font-weight: bold;
+    color: #b3541e;
+}

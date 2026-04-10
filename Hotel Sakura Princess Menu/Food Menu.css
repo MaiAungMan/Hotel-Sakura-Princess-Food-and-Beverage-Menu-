@@ -1,0 +1,768 @@
+/* =========================
+   1. IMPORTS & VARIABLES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --sakura-pink: #f7c1cc;
+    --deep-sakura: #DC8876;
+    --soft-cream: #fff9fb;
+    --gold-accent: #d4af37;
+    --text-dark: #333;
+}
+
+/* =========================
+   2. RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('sakuraflower-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', 'Noto Sans Myanmar', sans-serif;
+    color: #333;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* =========================
+   3. NAVBAR SECTION
+========================= */
+.navbar {
+    background-color: var(--sakura-pink);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.hotel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ec2471e5;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff6b81;
+}
+
+/* =========================
+   4. MENU TOGGLE & SEARCH
+========================= */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+#mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
+#mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    background: #fff;
+    box-shadow: 0 0 0 2px #ff6b81;
+}
+
+#search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    width: 150px;
+    transition: width 0.3s ease;
+}
+
+#search-input:focus { width: 200px; }
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+}
+
+/* =========================
+   5. CART SIDEBAR & OVERLAY
+========================= */
+.cart-trigger {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    padding: 5px;
+}
+
+.cart-trigger:hover {
+    transform: scale(1.1);
+    color: #ff6b81;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid white;
+}
+
+.cart-count:empty { display: none; }
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: var(--sakura-pink);
+    box-shadow: -2px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active { right: 0; }
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.cart-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: -0.5px;
+}
+
+.close-cart {
+    background: #0000005b;
+    border: none;
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.close-cart:hover {
+    background-color: #ff6b81;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.close-cart:active { transform: scale(0.8); }
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+
+.cart-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--deep-sakura);
+    color: var(--soft-cream);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.checkout-btn:hover { background: #b95f52; }
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.remove-item:hover {
+    color: #ff6b81;
+    transform: scale(1.2);
+}
+
+.empty-msg {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* =========================
+   6. ABOUT SECTION
+========================= */
+.aboutdetail {
+    background-color: #0f0f0f;
+    padding: 60px 20px;
+    color: #eaeaea;
+}
+
+.aboutdetail .lang {
+    max-width: 900px;
+    margin: auto;
+}
+
+.aboutdetail h1,
+.aboutdetail h2,
+.aboutdetail h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.aboutdetail h2 {
+    font-size: 36px;
+    color: var(--gold-accent);
+}
+
+.aboutdetail h2 span {
+    display: block;
+    font-size: 16px;
+    color: #c9c9c9;
+    margin-top: 8px;
+}
+
+.diningservice {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-left: 3px solid var(--gold-accent);
+    margin: 30px 0;
+}
+
+.aboutdetail p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.aboutdetail ul {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.aboutdetail ul li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.aboutdetail ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--gold-accent);
+}
+
+/* =========================
+   7. MENU HEADINGS & CATEGORIES
+========================= */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #DC8876;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background-color: var(--gold-accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.foodmenu,
+.beveragemenu {
+    background-color: rgba(255,249,251,0.9);
+    padding: 40px 20px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, pink, hotpink) 1;
+}
+
+.foodmenu > header,
+.beveragemenu > header {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-sakura);
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.category-section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-sakura);
+    margin: 40px 0 20px;
+    position: relative;
+}
+
+.category-section h2::before,
+.category-section h2::after {
+    content: "";
+    flex: 1;
+    height: 28px;
+    border-top: 2px solid #ffb7c5;
+    border-bottom: 2px solid #ffb7c5;
+    background-image: url("Sakura flower.jpg");
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
+}
+
+.category-section h2::before { margin-right: 10px; }
+.category-section h2::after  { margin-left: 10px; }
+
+/* =========================
+   8. MENU ITEM CARDS
+========================= */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff, #fdf1f4);
+    width: 250px;
+    height: 350px;
+    border-radius: 8px;
+    border: 2px solid #D2746C;
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.menu-item:hover img { transform: scale(1.05); }
+
+.item-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.4s ease;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 6px;
+    text-align: center;
+    gap: 4px;
+    transition: transform 0.4s ease;
+}
+
+.eng-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.mm-name {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.price {
+    margin-top: 6px;
+    font-weight: bold;
+    color: var(--gold-accent);
+}
+
+.add-to-cart {
+    padding: 6px 12px;
+    background: var(--deep-sakura);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+/* Item Animation States */
+.menu-item.open img {
+    transform: translateY(-120px);
+    opacity: 0;
+}
+
+.menu-item.open .item-details {
+    transform: translateY(-120px);
+}
+
+/* =========================
+   9. MENU OPTIONS DROPDOWN
+========================= */
+.menu-options {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+.options {
+    display: none;
+    list-style: none;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 0.8rem;
+}
+
+.options.show {
+    display: block;
+    background: #fff;
+    border: 1px solid #f7c1cc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 2px;
+}
+
+.options li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.options button {
+    display: block;
+    margin-bottom: 8px;
+    padding: 6px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    color: #fff;
+}
+
+
+.options li:last-child { border-bottom: none; }
+
+.options-header {
+    cursor: pointer;
+    background: var(--soft-cream);
+    padding: 5px;
+    border: 1px solid var(--sakura-pink);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+.nav-links {
+    display: none;
+}
+
+.search-container {
+    display: none;
+}
+
+.menu-toggle {
+    display: flex;
+}
+
+/* =========================
+   MOBILE (max-width:768px)
+========================= */
+
+@media (max-width:768px){
+
+/* Stack navbar */
+
+.navbar {
+    height: 100PX;
+    padding: 10px 0;
+}
+
+.nav-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    margin-top: -40px;
+    size: 10rem;
+    height: 50px;
+}
+
+/* Logo top */
+.logo{
+    order:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+}
+
+/* Search under logo */
+.search-container{
+    order:2;
+    display:flex;
+    width:60%;
+    justify-content:flex-start;
+    position: absolute;
+    top: 60px;
+    left: 10px;
+}
+
+/* Cart + menu row */
+.nav-actions{
+    order:3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    width:100%;
+}
+
+/* Cart icon */
+.cart-trigger{
+    order:1;
+    position: absolute;
+    top: 60px;
+    right: 50px;
+}
+
+/* Menu toggle */
+.menu-toggle{
+    order:2;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+}
+
+/* Hide nav links initially */
+.nav-links{
+    display:none;
+    width:100%;
+}
+
+/* Show menu when active */
+.nav-links.active{
+    order:4;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:20px;
+    width:100%;
+    background:var(--sakura-pink);
+    position: absolute;
+    top: 100px;
+}
+
+/* Search animation */
+#search-input{
+    width:100%;
+    padding:6px 10px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+    padding:30px;
+}
+
+}
+
+
+
+/* =========================
+   TABLET & DESKTOP
+========================= */
+
+@media (min-width:769px){
+
+.nav-links{
+    display:flex;
+}
+
+.menu-toggle{
+    display:none;
+}
+
+.search-container{
+    display:flex;
+}
+
+}

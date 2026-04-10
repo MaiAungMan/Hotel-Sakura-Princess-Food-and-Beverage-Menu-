@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Sakura Princess Food Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="Food Menu.css">
+</head>
+<body>
+  
+<nav class="navbar">
+    <div class="nav-container">
+        
+        <div class="logo">
+            <img src="social_large.png" alt="Hotel Sakura Princess Logo">
+            <span class="hotel-name">Hotel Sakura Princess</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="search-container">
+                <input type="text" placeholder="Search food..." id="search-input">
+                <button type="submit" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+            </div>
+
+            <button class="cart-trigger" onclick="toggleCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </button>
+
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+        <p class="empty-msg">Your cart is empty.</p>
+    </div>
+
+    <div class="cart-footer">
+        <div class="total-row">
+            <span>Total:</span>
+            <span><span id="cart-total">0</span> MMK</span>
+        </div>
+        <button class="checkout-btn">Please Dial 444</button>
+    </div>
+</div>
+
+<div class="aboutdetail" id="about">
+    <div class="lang">
+        <h1>Welcom To Bagan Dining Hall</h1>
+        <h2>
+            Hotel Restaurants Dining Services
+            <span>ဟိုတယ်ဝန်ဆောင်မှု၏ စားသောက်ခန်းအချက်အလက်</span>
+        </h2>
+
+        <div class="diningservice">
+            <p>For Retail and Information assistance, please dial <strong>444</strong>.
+            </p>
+
+            <p>
+                <strong>အစားအသောက် ဝန်ဆောင်မှုများ အကြောင်း မေးမြန်းလိုပါက</strong><br>
+                ဖုန်းနံပါတ် <strong>444</strong> သို့ ဆက်သွယ်မေးမြန်းနိုင်ပါသည်။
+            </p>
+        </div>
+
+        <p>
+            Bagan Dining Hall is located on the ground floor and is easy to find, just to the right of the Reception.
+        </p>
+
+        <p>
+            Bagan Dining Hall သည် ဟိုတယ်၏ မြေညီထပ်တွင် တည်ရှိပြီး
+            Reception ၏ ညာဘက်၌ လွယ်ကူစွာ ရှာဖွေနိုင်ပါသည်။
+        </p>
+
+
+        <ul>
+            <li>
+                Served daily Breakfast Buffet from 6:30 AM to 9:30 AM
+            </li>
+            <li>
+                <strong>မနက်စာ ဘူဖေးအား</strong> 
+                နေ့စဉ် နံနက် ၆:၃၀ မှ ၉:၃၀ အထိ သုံးဆောင်နိုင်ပါသည်။
+            </li>
+            <li>
+                Food and beverages are available 24-Hour Room Service.
+            </li>
+            <li>
+                <strong>အစားအသောက်နှင့် အဖျော်ယမကာများကို ၂၄ နာရီ  အခန်း ဝန်ဆောင်မှုကို မှာယူနိုင်ပါသည်။</strong> 
+                
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="foodmenu" id="menu">
+    <header>Food Menu</header>
+
+    <section class="menu">
+
+        <!-- Appetizer -->
+        <div class="category-section">
+            <h2>Appetizer</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/fish-cracker.png" alt="Fish Cracker" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fish Cracker</span>
+                        <span class="mm-name">ငါးမုန့်ကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart"onclick="addToCart('Fish Cracker', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/spring-roll.png" alt="Spring Roll" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Spring Roll</span>
+                        <span class="mm-name">ကော်ပြန့်ကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Vegetable (သီးရွက်စုံ) <span class="price">7500 MMK</span>
+                                        <button class="add-to-cart" onclick="addToCart('Vegetable Spring Roll', 7500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn (ပုဇွန်) <span class="price">16500 MMK</span>
+                                        <button class="add-to-cart" onclick="addToCart('Prawn Spring Roll', 16500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/prawn-tempura.png" alt="Prawn Tempura" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Prawn Tempura</span>
+                        <span class="mm-name">ပုဇွန်တန်ပူရာကြော်</span>
+                        <span class="price">16500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Prawn Tempura', 16500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/tempura.png" alt="Tempura" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tempura</span>
+                        <span class="mm-name">တန်ပူရာကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>Vegetable (သီးရွက်စုံ) <span class="price">7500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Vegetable Tempura', 7500)">Add to Cart</button>
+                                </li>
+                                
+                                <li>Prawn (ပုဇွန်) <span class="price">16500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Tempura', 16500)">Add to Cart</button>
+                                </li>
+                                <li>Squid (ပြည်ကြီးငါး) <span class="price">15000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Squid Tempura', 15000)">Add to Cart</button>
+                                </li>
+                                <li>Octopus (ရေဘဝဲ) <span class="price">15000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Octopus Tempura', 15000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/french-fries.png" alt="French Fries" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">French Fries</span>
+                        <span class="mm-name">အာလူးချောင်းကြော်</span>
+                        <span class="price">7500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('French Fries', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/chicken-wings.png" alt="Chicken Wings" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Chicken Wings</span>
+                        <span class="mm-name">ကြက်တောင်ပံကြော်</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Deep Fried Chicken Wings', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/chicken-wings-honey.png" alt="Chicken Wings with Honey" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Chicken Wings with Honey</span>
+                        <span class="mm-name">ကြက်တောင်ပံကြော်ပြားရည်ဆမ်း</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Deep Fried Chicken Wings with Honey', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/deep-chicken.png" alt="Deep Fried Chicken" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Chicken</span>
+                        <span class="mm-name">ကြက်ခြောက်ကြော်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Deep Fried Chicken', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/chicken-thighs.png" alt="Chicken Thighs" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Crispy Fried Chicken Thighs</span>
+                        <span class="mm-name">ကြက်ပေါင်ကြွပ်ကြော်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Crispy Fried Chicken Thighs', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/pork-ribs.png" alt="Pork Ribs" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Pork Ribs</span>
+                        <span class="mm-name">ဝက်နံရိုးကြော်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart"onclick="addToCart('Deep Fried Pork Ribs', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/slice-pork.png" alt="Slice Pork" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Slice Pork</span>
+                        <span class="mm-name">ဝက်သားပြားကြော်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Deep Fried Slice Pork', 9000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/slice-beef.png" alt="Slice Beef" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Deep Fried Slice Beef</span>
+                        <span class="mm-name">အမဲသားပြားကြော်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Deep Fried Slice Beef', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/fish-finger.png" alt="Fish Finger" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fish Finger</span>
+                        <span class="mm-name">ငါးသားချောင်းကြော်</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Fish Finger', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/fish-chip.png" alt="Fish & Chips" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fish & Chip</span>
+                        <span class="mm-name">ငါးနှင့်အားလူး</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Fish & Chip', 12000)"> Add to Cart </button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/starter/cashew-nut.png" alt="Cashew Nut" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fried Cashew Nuts</span>
+                        <span class="mm-name">သီဟိုဠ်စေ့ကြော်</span>
+                        <span class="price">13500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Fried Cashew Nuts', 13500)"> Add to Cart </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Salad -->
+        <div class="category-section">
+            <h2>Salad</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/tealeaf.png" class="item-img" alt="Myanmar Tea Leaf Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Myanmar Tea Leaf Salad</span>
+                        <span class="mm-name">လက်ဖက်သုပ်</span> 
+                        <span class="price">7500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Myanmar Tea Leaf Salad', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/seaweed.png" class="item-img" alt="Seaweed Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Seaweed Salad</span>
+                        <span class="mm-name">ကျောက်ပွင့်သုတ်</span>
+                        <span class="price">7500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Seaweed Salad', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/kailan-salad.png" class="item-img" alt="Thai Style Kailan">
+                    <div class="item-details">
+                        <span class="eng-name">Thai Style Kailan Salad</span>
+                        <span class="mm-name">ကိုက်လန်သုတ်</span>
+                        <span class="price">7500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Thai Style Kailan Salad', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/carrot-salad.png" class="item-img" alt="Carrot Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Carrot Salad</span>
+                        <span class="mm-name">ခါကြက်ဥသုတ်/ဥနီသုတ်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Carrot Salad', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/mixed-vegetable-salad.png" class="item-img" alt="Mixed Vegetable Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Mixed Vegetable Salad</span>
+                        <span class="mm-name">သီးရွက်စုံသုတ်</span>
+                        <span class="price">7500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Mixed Vegetable Salad', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/century-egg-salad.png" class="item-img" alt="Century Egg Salad ">
+                    <div class="item-details">
+                        <span class="eng-name">Century Egg Salad</span>
+                        <span class="mm-name">ဆေးဘဲဥသုတ်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Century Egg Salad', 9000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/chicken-salad.png" class="item-img" alt="Chicken Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Chicken Salad</span>
+                        <span class="mm-name">ကြက်သားသုပ်</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Salad', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/pork-salad.png" class="item-img" alt="Pork Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Pork Salad</span>
+                        <span class="mm-name">ဝက်သားသုပ်</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Pork Salad', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/beef-salad.png" class="item-img" alt="Beef Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Beef Salad</span>
+                        <span class="mm-name">အမဲသားသုပ်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Beef Salad', 12000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/seafood-salad.png" class="item-img" alt="Seafood Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Seafood Salad</span>
+                        <span class="mm-name">ပင်လယ်စာသုပ်</span>
+                        <span class="price">18000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Seafood Salad', 18000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/prawn-salad.png" class="item-img" alt="Prawn Salad">
+                    <div class="item-details">
+                        <span class="eng-name">Prawn Salad</span>
+                        <span class="mm-name">ပုဇွန်သုပ်</span>
+                        <span class="price">16500 MMK</span>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Prawn Salad', 16500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/shredded-mutton.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Shredded Mutton</span>
+                        <span class="mm-name">ဆိတ်မွှထောင်း</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Shredded Mutton', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/salad/glass-noodle-salad.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Glass Noodle Salad</span>
+                        <span class="mm-name">ပဲကြာဇံသုတ်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Squash <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Glass Noodle Salad with Squash', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Octopus <span class="price">15000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Glass Noodle Salad with Octopus', 15000)">Add to Cart</button>
+                                </li>
+                                <li>Prawn <span class="price">18000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Glass Noodle Salad with Prawn', 18000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">18000 MMK</span>
+                                        <button class="add-to-cart" onclick="addToCart('Glass Noodle Salad with Seafood', 18000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Soup -->
+        <div class="category-section">
+            <h2>Soup</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/tomyum-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tom Yum Soup</span>
+                        <span class="mm-name">တုံးယမ်းဟင်းရည်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Tom Yum Soup with Chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Tom Yum Soup with Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">15000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Tom Yum Soup with Prawn', 15000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">15000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Tom Yum Soup with Seafood', 15000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/sonton-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Swun Tan Soup</span>
+                        <span class="mm-name">စွန်တန်ဟင်းရည်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Swun Tan Soup', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/lentil-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Lentil Soup</span>
+                        <span class="mm-name">ပဲနီလေးဟင်းရည်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Lentil Soup', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/sweet-corn-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Sweet Corn Soup</span>
+                        <span class="mm-name">ပြောင်းဖူးဟင်းရည်</span>
+                        <span class="price">7500 MMK</span>
+                    </div>
+                    <button class="add-to-cart" onclick="addToCart('Sweet Corn Soup', 7500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/noodle-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Noodle Soup</span>
+                        <span class="mm-name">ခေါက်ဆွဲပြုတ်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Noodle Soup with Chicken', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Noodle Soup with Pork', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Noodle Soup with Prawn', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Noodle Soup with Seafood', 12000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/vermicelli-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Vermicelli Soup</span>
+                        <span class="mm-name">ကြာဇံဟင်းရည်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Vermicelli Soup with Chicken', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Vermicelli Soup with Pork', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Vermicelli Soup with Prawn', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Vermicelli Soup with Seafood', 12000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/congee.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Congee</span>
+                        <span class="mm-name">ဆန်ပြုတ်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Plain <span class="price">6000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Congee Plain', 6000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Chicken <span class="price">7500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Congee Chicken', 7500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">7500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Congee Pork', 7500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Fish <span class="price">7500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Congee Fish', 7500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/fishball-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fish Ball Soup</span>
+                        <span class="mm-name">ငါးဖယ်လုံးဟင်းရည်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Fish Ball Soup', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/soup/mustard-soup.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Pork Ribs with Mustard Soup</span>
+                        <span class="mm-name">ဝက်နံရိုးကြံမဆိုင်ဟင်းရည်</span>
+                        <span class="price">12000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Pork Ribs with Mustard Soup', 12000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Asian Main Course -->
+        <div class="category-section">
+            <h2>Asian Main Course</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/chicken-curry.png" class="item-img" alt="Chicken Potato Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Chicken Potato Curry</span>
+                        <span class="mm-name">ကြက်သားဟင်း</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Potato Curry', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/pork-curry.png" class="item-img" alt="Pork Potato Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Pork Potato Curry</span>
+                        <span class="mm-name">ဝက်သားဟင်း</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Pork Potato Curry', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/fish-curry.png" class="item-img" alt="Fish Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Fish Curry</span>
+                        <span class="mm-name">ငါးဟင်း</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Fish Curry', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/beef-curry.png" class="item-img" alt="Beef Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Beef Curry</span>
+                        <span class="mm-name">အမဲသားဟင်း</span>
+                        <span class="price">10500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Beef Curry', 10500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/seafood-curry.png" class="item-img" alt="Seafood Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Seafood Curry</span>
+                        <span class="mm-name">ပင်လယ်စာဟင်း</span>
+                        <span class="price">18000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Seafood Curry', 18000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/prawn-curry.png" class="item-img" alt="Prawn Curry">
+                    <div class="item-details">
+                        <span class="eng-name">Prawn Curry</span>
+                        <span class="mm-name">ပုဇွန်ဟင်း</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Prawn Curry', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/koung-boung.png" class="item-img" alt="Koun Boung">
+                    <div class="item-details">
+                        <span class="eng-name">Koung Boung</span>
+                        <span class="mm-name">ကုန်းဘောင်ကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Koung Boung with Chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Koung Boung with Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Beef <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Koung Boung with Beef', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">21000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Koung Boung with Seafood', 21000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/hot-sour.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Hot & Sour</span>
+                        <span class="mm-name">ချဉ်စပ်ကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Hot & Sour chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Hot & Sour Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Beef <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Hot & Sour Beef', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">21000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Hot & Sour Seafood', 21000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/sweet-sour.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Sweet & Sour</span>
+                        <span class="mm-name">ချိုချဉ်ကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Sweet & Sour chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Sweet & Sour Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Beef <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Sweet & Sour Beef', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">21000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Sweet & Sour Seafood', 21000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/thai-basil.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Thai Basil</span>
+                        <span class="mm-name">ထိုင်းစတိုင်ပင်စိမ်းကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Thai Basil With Chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Thai Basil With Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Beef <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Thai Basil With Beef', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">21000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Thai Basil With Seafood', 21000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/black-pepper.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Black Pepper</span>
+                        <span class="mm-name">ငရုပ်ကောင်းကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Black Pepper With Chicken', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Black Pepper With Pork', 12000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Beef <span class="price">12000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Black Pepper With Beef', 12000)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/crispy-chilli-beef.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Crispy Chilli Beef</span>
+                        <span class="mm-name">အမဲသားခြောက်စပ်</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Crispy Chilli Beef', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/crispy-chilli-eel.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Crispy Chilli Eel</span>
+                        <span class="mm-name">ငါးရှဥ့်ခြောက်စပ်</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Crispy Chilli Eel', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/crispy-pork-belly.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Crispy Pork Belly</span>
+                        <span class="mm-name">ဝက်သုံးထပ်သားကြော်</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Crispy Pork Belly', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/crispy-chilli-chicken.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Crispy Chilli Chicken</span>
+                        <span class="mm-name">အိမ်တွင်သော ကျွန်တော်</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Crispy Chilli Chicken', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/hot-sour-seabass.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Hot & Sour Seabass</span>
+                        <span class="mm-name">ကက္ကတစ်ငါးချဥ်စပ်ကြွက်ကြော်</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Hot & Sour Seabass', 15000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/asian main dishes/steamed-seabass.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Steamed Seabass with Lime Sauce</span>
+                        <span class="mm-name">ကက္ကတစ်ငါးသံပရာပေါင်း</span>
+                        <span class="price">15000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Stemed Seabass With Lime Sauce', 15000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Rice -->
+        <div class="category-section">
+            <h2>Fried Rice</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/rice/plain-rice.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Rice</span>
+                        <span class="mm-name">ထမင်း</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Plain Rice <span class="price">3000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Plain Rice', 3000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Oily Rice <span class="price">4500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Oily Rice', 4500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/rice/chinese-fried-rice.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Chinese Fried Rice</span>
+                        <span class="mm-name">ထမင်းကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/rice/tomyum-fried.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tom Yum Fried Rice</span>
+                        <span class="mm-name">တုံယမ်းထမင်းကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Tom Yum Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Tom Yum Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Tom Yum Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Tom Yum Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/rice/pashu-fried.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Pashu Fried Rice</span>
+                        <span class="mm-name">ပသျှူးထမင်းကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Pashu Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Pashu Fried Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Pashu Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Pashu Fried Rice', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/rice/ygn-steamed-rice.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Yangon Steamed Rice</span>
+                        <span class="mm-name">ရန်ကုန်ထမင်းပေါင်း</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Yangon Steamed Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">9000 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Yangon Steamed Rice', 9000)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Yangon Steamed Rice', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Yangon Steamed Rice', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fried Noodle & Vermicelli -->
+        <div class="category-section">
+            <h2>Fried Noodle & Vermicelli</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/vermicelli and noodle/fried-noodle.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fried Noodles</span>
+                        <span class="mm-name">ခေါက်ဆွဲကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Fried Noodles', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Fried Noodles', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Fried Noodles', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Fried Noodles', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vermicelli and noodle/fried-vermicelli.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fried Vermicelli</span>
+                        <span class="mm-name">ကြာဇံကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Fried Vermicelli', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Fried Vermicelli', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Fried Vermicelli', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Fried Vermicelli', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vermicelli and noodle/fried-glass-noodle.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Fried Glass Noodle</span>
+                        <span class="mm-name">ပဲကြာဇံကြော်</span>
+                        <div class="menu-options">
+                            <div class="options-header" onclick="toggleOptions(this)">
+                                <span>Options(ရွေးချယ်စရာများ)</span>
+                                <i class="fa-solid fa-chevron-down arrow"></i>
+                            </div>
+
+                            <ul class="options">
+                                <li>
+                                    Chicken <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Chicken Fried Glass Noodle', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Pork <span class="price">10500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Pork Fried Glass Noodle', 10500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Prawn <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Prawn Fried Glass Noodle', 13500)">Add to Cart</button>
+                                </li>
+                                <li>
+                                    Seafood <span class="price">13500 MMK</span>
+                                    <button class="add-to-cart" onclick="addToCart('Seafood Fried Glass Noodle', 13500)">Add to Cart</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fried Vegetable -->
+        <div class="category-section">
+            <h2>Fried Vegetable</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/watercress.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Stir Fried Watercress</span>
+                        <span class="mm-name">ကဇွန်းရွက်ကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Stir Fried Watercress', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/cauliflower-egg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Stir Fried Cauliflower with Egg</span>
+                        <span class="mm-name">ပန်းပွင့်ကြက်ဥကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Stir Fried Cauliflower with Egg', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/cabbage.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Chinese Cabbage with Mushroom</span>
+                        <span class="mm-name">မုန်ညှင်းဖြူမှိုကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Chinese Cabbage with Mushroom', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/kailan-veg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Stir Fried Kailan with Oyster Sauce</span>
+                        <span class="mm-name">ကိုက်လန်ခရုဆီကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Stir Fried Kailan with Oyster Sauce', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/bokchoy-veg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Stir Fried Bokchoy with Oyster Sauce</span>
+                        <span class="mm-name">ထိုင်ဝမ်မုန်ညှင်းခရုဆီကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Stir Fried Bokchoy with Oyster Sauce', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/mixed-veg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Mixed Vegetables with Oyster Sauce</span>
+                        <span class="mm-name">သီးရွက်စုံကြော်</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Mixed Vegetables with Oyster Sauce', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/vegetable/mix-veg-tofu.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Mixed Vegetables with Japan Tofu</span>
+                        <span class="mm-name">သီးရွက်စုံဂျပန်တိုဖူးကြော်</span>
+                        <span class="price">5000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Mixed Vegetables with Japan Tofu', 5000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Fried Egg -->
+        <div class="category-section">
+            <h2>Fried Egg</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/egg/sunny-side-up.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Sunny Side Up Egg</span>
+                        <span class="mm-name">ကြက်ဥကြော်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Sunny Side Up Egg', 4500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/egg/omelette.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Vegetable Omelette</span>
+                        <span class="mm-name">ကြက်ဥမွှေကြော်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Vegetable Omelette', 4500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/egg/scrambled-egg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Scrambled Eggs </span>
+                        <span class="mm-name">နို့ကြက်ဥကြော်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Scrambled Eggs', 4500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/egg/boiled-egg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Boiled Egg</span>
+                        <span class="mm-name">ကြက်ဥပြုတ်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Boiled Egg', 4500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/egg/poached-egg.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Poached Egg</span>
+                        <span class="mm-name">ကြက်ဥအကာကျက်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Poached Egg', 4500)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- Sandwich -->
+        <div class="category-section">
+            <h2>Sandwich</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tuna Sandwich</span>
+                        <span class="mm-name">တူနာဆန်ဝှစ်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Tuna Sandwich', 9000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Chicken Sandwich</span>
+                        <span class="mm-name">ကြက်ဆန်ဝှစ်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Chicken Sandwich', 9000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/sandwich/cheese-sandwich.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Cheese Sandwich</span>
+                        <span class="mm-name">ချိစ်ဆန်ဝှစ်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Cheese Sandwich', 9000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Pork Sandwich</span>
+                        <span class="mm-name">ဝက်ဆန်ဝှစ်</span>
+                        <span class="price">9000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Pork Sandwich', 9000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+        <!-- End of Sandwich Section -->
+    </div>    
+    </section>
+</div>
+
+<div class="beveragemenu">
+    <header>Beverage Menu</header>
+    
+    <section class="menu">
+        
+        <!-- beer -->
+        <div class="category-section">
+            <h2>Beer</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/beer/tiger-bottle.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tiger Beer</span>
+                        <span class="mm-name">Tiger ဘီယာ</span>
+                        <span class="price">75000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Tiger Beer', 75000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/beer/tiger-can.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tiger Beer</span>
+                        <span class="mm-name">Tiger ဘီယာ</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Tiger Beer', 6000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/beer/abc-bottle.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">ABC Beer</span>
+                        <span class="mm-name">ABC ဘီယာ</span>
+                        <span class="price">75000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('ABC Beer', 75000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/beer/abc-can.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">ABC Beer</span>
+                        <span class="mm-name">ABC ဘီယာ</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('ABC Beer', 6000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/beer/heineken-bottle.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Heineken Beer</span>
+                        <span class="mm-name">Heineken ဘီယာ</span>
+                        <span class="price">75000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Heineken Beer', 75000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/beer/heineken-can.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Heineken Beer</span>
+                        <span class="mm-name">Heineken ဘီယာ</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Heineken Beer', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/beer/carlsberg-can.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Carlsberg Beer</span>
+                        <span class="mm-name">Carlsberg ဘီယာ</span>
+                        <span class="price">6000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Carlsberg Beer', 6000)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/beer/tuborg-can.png" alt="Beer" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Tuborg Beer</span>
+                        <span class="mm-name">Tuborg ဘီယာ</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Carlsberg Beer', 6000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- energy drink -->
+        <div class="category-section">
+            <h2>Energy Drink</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/soft drink/shark.png" alt="Shark" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Shark</span>
+                        <span class="mm-name">ရှပ်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Shark', 4500)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- soft-drink -->
+        <div class="category-section">
+        <h2>Soft Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/soft drink/coke.png" alt="Coke" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Coca Cola</span>
+                        <span class="mm-name">ကိုကာကိုလာ</span>
+                        <span class="price">3000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Coca Cola', 3000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/soft drink/sunkist-orange.png" alt="sunkist-orange" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Sunkist Orange</span>
+                        <span class="mm-name">ဆန်းကစ် လိမ္မော်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Sunkist Orange', 4500)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Squash juice -->
+        <div class="category-section">
+            <h2>Squash Juice</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/juice/orange-juice.png" alt="Orange Juice" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Orange Squash Juice</span>
+                        <span class="mm-name">လိမ္မော်ရည်</span>
+                        <span class="price">3000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Orange Squash Juice', 3000)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fresh juice -->
+        <div class="category-section">
+            <h2>Fresh Juice</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/juice/lime-juice.png" alt="Lime Juice" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Limes Fresh Juice</span>
+                        <span class="mm-name">သံပရာရည်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Limes Fresh Juice', 4500)">Add to Cart</button>
+                </div>
+                
+                <div class="menu-item">
+                    <img src="menu-img/juice/watermelon-juice.png" alt="Watermelon Juice" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Watermelon Fresh Juice</span>
+                        <span class="mm-name">ဖရဲသီးဖျော်ရည်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Watermelon Fresh Juice', 4500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/juice/strawberry-juice.png" alt="Strawberry Juice" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Strawberry Fresh Juice</span>
+                        <span class="mm-name">စတော်ဘယ်ဖျော်ရည်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Strawberry Fresh Juice', 4500)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- milk shake -->
+        <div class="category-section">
+            <h2>Seasonal Fruit Milkshake</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/juice/banana-milkshake.png" alt="Banana Milkshake" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Banana Milk Shake</span>
+                        <span class="mm-name">ငှက်ပျောသီးမစ်ရှိတ်</span>
+                        <span class="price">4500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Banana Milk Shake', 4500)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- water -->
+        <div class="category-section">
+            <h2>Water</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="menu-img/water/ph7water.png" alt="pH7 Drinking Water" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">pH 7 Drinking Water</span>
+                        <span class="mm-name">pH 7 ရေသန့်</span>
+                        <span class="price">1500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('pH 7 Drinking Water', 1500)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <img src="menu-img/water/soda-water.png" alt="Mineral Water" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Pop Soda Water</span>
+                        <span class="mm-name">ဆိုတာ ရေ</span>
+                        <span class="price">1500 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Pop Soda Water', 1500)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cigarettes & lighter -->
+        <div class="category-section">
+            <h2>Cigarettes & Lighter</h2>
+
+            <div class="menu-grid">
+                <!-- Cigarettes -->
+                        <div class="menu-item">
+                            <img src="menu-img/cigarettes and lighter/cigarettes.png"  alt="Cigarettes" class="item-img">
+                            <div class="item-details">
+                                <span class="eng-name">Mevius</span>
+                                <span class="mm-name"></span>
+                                <div class="menu-options">
+                                    <div class="options-header" onclick="toggleOptions(this)">
+                                        <span>Options(ရွေးချယ်စရာများ)</span>
+                                        <i class="fa-solid fa-chevron-down arrow"></i>
+                                    </div>
+                                    <ul class="options">
+                                        <li>
+                                            Original Blue (02) <span class="price">9000 MMK</span>
+                                            <button class="add-to-cart" onclick="addToCart('Original Blue (02)', 9000)">Add to Cart</button>
+                                        </li>
+                                        <!-- <li>
+                                            Sky Blue (04) <span class="price">9000 MMK</span>
+                                            <button class="add-to-cart" onclick="addToCart('Sky Blue (04)', 9000)">Add to Cart</button>
+                                        </li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>        
+                <!-- Lighter -->
+                <div class="menu-item">
+                    <img src="menu-img/cigarettes and lighter/lighter.png" alt="Lighter" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Lighter</span>
+                        <span class="mm-name">မီးခြစ်</span>
+                        <span class="price">1200 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Lighter', 1200)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+    </section> 
+</div>
+
+    <!-- Optional JS file -->
+    <script src="Food Menu.js"></script>
+
+</body>
+</html>
