@@ -1,4 +1,4 @@
-/* ==========================================
+﻿/* ==========================================
    1. NAVIGATION & MOBILE MENU
 ========================================== */
 
@@ -276,5 +276,12 @@ function updateCart() {
 
     cartCount.innerText =
         cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        function makeCall() {
+  // confirm box (optional)
+  if (confirm("444 ကိုဖုန်းခေါ်မလား?")) {
+    window.location.href = "tel:444";
+  }
+}
 
 }

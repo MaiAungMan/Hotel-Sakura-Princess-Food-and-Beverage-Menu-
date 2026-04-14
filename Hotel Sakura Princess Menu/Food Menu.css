@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
    1. IMPORTS & VARIABLES
 ========================= */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
@@ -308,16 +308,33 @@ body.no-scroll {
 }
 
 .checkout-btn {
-    width: 100%;
-    padding: 10px;
-    background: var(--deep-sakura);
-    color: var(--soft-cream);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.checkout-btn:hover { background: #b95f52; }
+.checkout-btn strong {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.checkout-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #20c997, #28a745);
+}
+
+.checkout-btn:active {
+  transform: scale(0.95);
+}
 
 .remove-item {
     background: none;

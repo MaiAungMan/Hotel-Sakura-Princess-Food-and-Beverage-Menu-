@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
             <div class="search-container">
                 <input type="text" placeholder="Search food..." id="search-input">
                 <button type="submit" class="search-btn">
-                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
 
@@ -66,8 +66,11 @@
             <span>Total:</span>
             <span><span id="cart-total">0</span> MMK</span>
         </div>
-        <button class="checkout-btn">Please Dial 444</button>
-    </div>
+    <button class="checkout-btn" onclick="window.location.href='tel:444'">
+        Please Dial 444 
+        <strong>အော်တာမှာလိုပါက 444 ကိုဖုန်းခေါ်နိုင်ပါသည်</strong>
+    </button>    
+</div>
 </div>
 
 <div class="aboutdetail" id="about">
@@ -78,7 +81,7 @@
             <span>ဟိုတယ်ဝန်ဆောင်မှု၏ စားသောက်ခန်းအချက်အလက်</span>
         </h2>
 
-        <div class="diningservice">
+        <div class="diningservice" id="contact">
             <p>For Retail and Information assistance, please dial <strong>444</strong>.
             </p>
 
@@ -431,7 +434,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/salad/shredded-mutton.png" class="item-img">
+                    <img src="menu-img/salad/shredded-mutton.png" class="item-img" alt="Shredded Mutton">
                     <div class="item-details">
                         <span class="eng-name">Shredded Mutton</span>
                         <span class="mm-name">ဆိတ်မွှထောင်း</span>
@@ -441,7 +444,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/salad/glass-noodle-salad.png" class="item-img">
+                    <img src="menu-img/salad/glass-noodle-salad.png" class="item-img" alt="Glass Noodle Salad">
                     <div class="item-details">
                         <span class="eng-name">Glass Noodle Salad</span>
                         <span class="mm-name">ပဲကြာဇံသုတ်</span>
@@ -480,7 +483,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/tomyum-soup.png" class="item-img">
+                    <img src="menu-img/soup/tomyum-soup.png" class="item-img" alt="Tom Yum Soup">
                     <div class="item-details">
                         <span class="eng-name">Tom Yum Soup</span>
                         <span class="mm-name">တုံးယမ်းဟင်းရည်</span>
@@ -512,7 +515,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/sonton-soup.png" class="item-img">
+                    <img src="menu-img/soup/sonton-soup.png" class="item-img" alt="Swun Tan Soup">
                     <div class="item-details">
                         <span class="eng-name">Swun Tan Soup</span>
                         <span class="mm-name">စွန်တန်ဟင်းရည်</span>
@@ -522,7 +525,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/lentil-soup.png" class="item-img">
+                    <img src="menu-img/soup/lentil-soup.png" class="item-img" alt="Lentil soup">
                     <div class="item-details">
                         <span class="eng-name">Lentil Soup</span>
                         <span class="mm-name">ပဲနီလေးဟင်းရည်</span>
@@ -532,7 +535,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/sweet-corn-soup.png" class="item-img">
+                    <img src="menu-img/soup/sweet-corn-soup.png" class="item-img" alt="Sweet Corn Soup">
                     <div class="item-details">
                         <span class="eng-name">Sweet Corn Soup</span>
                         <span class="mm-name">ပြောင်းဖူးဟင်းရည်</span>
@@ -542,7 +545,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/noodle-soup.png" class="item-img">
+                    <img src="menu-img/soup/noodle-soup.png" class="item-img" alt="Noodle Soup">
                     <div class="item-details">
                         <span class="eng-name">Noodle Soup</span>
                         <span class="mm-name">ခေါက်ဆွဲပြုတ်</span>
@@ -574,7 +577,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/vermicelli-soup.png" class="item-img">
+                    <img src="menu-img/soup/vermicelli-soup.png" class="item-img" alt="Vermicelli Soup">
                     <div class="item-details">
                         <span class="eng-name">Vermicelli Soup</span>
                         <span class="mm-name">ကြာဇံဟင်းရည်</span>
@@ -606,7 +609,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/congee.png" class="item-img">
+                    <img src="menu-img/soup/congee.png" class="item-img" alt="Congee">
                     <div class="item-details">
                         <span class="eng-name">Congee</span>
                         <span class="mm-name">ဆန်ပြုတ်</span>
@@ -638,7 +641,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/fishball-soup.png" class="item-img">
+                    <img src="menu-img/soup/fishball-soup.png" class="item-img" alt="Fish Ball Soup">
                     <div class="item-details">
                         <span class="eng-name">Fish Ball Soup</span>
                         <span class="mm-name">ငါးဖယ်လုံးဟင်းရည်</span>
@@ -648,7 +651,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/soup/mustard-soup.png" class="item-img">
+                    <img src="menu-img/soup/mustard-soup.png" class="item-img" alt="Mustard Soup">
                     <div class="item-details">
                         <span class="eng-name">Pork Ribs with Mustard Soup</span>
                         <span class="mm-name">ဝက်နံရိုးကြံမဆိုင်ဟင်းရည်</span>
@@ -758,7 +761,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/hot-sour.png" class="item-img">
+                    <img src="menu-img/asian main dishes/hot-sour.png" class="item-img" alt="Hot And Sour">
                     <div class="item-details">
                         <span class="eng-name">Hot & Sour</span>
                         <span class="mm-name">ချဉ်စပ်ကြော်</span>
@@ -791,7 +794,7 @@
 
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/sweet-sour.png" class="item-img">
+                    <img src="menu-img/asian main dishes/sweet-sour.png" class="item-img" alt="Sweet and Sour">
                     <div class="item-details">
                         <span class="eng-name">Sweet & Sour</span>
                         <span class="mm-name">ချိုချဉ်ကြော်</span>
@@ -823,7 +826,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/thai-basil.png" class="item-img">
+                    <img src="menu-img/asian main dishes/thai-basil.png" class="item-img" alt="Thai Basil">
                     <div class="item-details">
                         <span class="eng-name">Thai Basil</span>
                         <span class="mm-name">ထိုင်းစတိုင်ပင်စိမ်းကြော်</span>
@@ -855,7 +858,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/black-pepper.png" class="item-img">
+                    <img src="menu-img/asian main dishes/black-pepper.png" class="item-img" alt="Black Pepper">
                     <div class="item-details">
                         <span class="eng-name">Black Pepper</span>
                         <span class="mm-name">ငရုပ်ကောင်းကြော်</span>
@@ -883,7 +886,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/crispy-chilli-beef.png" class="item-img">
+                    <img src="menu-img/asian main dishes/crispy-chilli-beef.png" class="item-img" alt="Crispy Chilli Beef">
                     <div class="item-details">
                         <span class="eng-name">Crispy Chilli Beef</span>
                         <span class="mm-name">အမဲသားခြောက်စပ်</span>
@@ -893,7 +896,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/crispy-chilli-eel.png" class="item-img">
+                    <img src="menu-img/asian main dishes/crispy-chilli-eel.png" class="item-img" alt="Crispy Chilli Eel">
                     <div class="item-details">
                         <span class="eng-name">Crispy Chilli Eel</span>
                         <span class="mm-name">ငါးရှဥ့်ခြောက်စပ်</span>
@@ -903,7 +906,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/crispy-pork-belly.png" class="item-img">
+                    <img src="menu-img/asian main dishes/crispy-pork-belly.png" class="item-img" alt="Crisp Pork Belly">
                     <div class="item-details">
                         <span class="eng-name">Crispy Pork Belly</span>
                         <span class="mm-name">ဝက်သုံးထပ်သားကြော်</span>
@@ -913,7 +916,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/crispy-chilli-chicken.png" class="item-img">
+                    <img src="menu-img/asian main dishes/crispy-chilli-chicken.png" class="item-img" alt="Crispy Chilli Chicken">
                     <div class="item-details">
                         <span class="eng-name">Crispy Chilli Chicken</span>
                         <span class="mm-name">အိမ်တွင်သော ကျွန်တော်</span>
@@ -923,7 +926,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/hot-sour-seabass.png" class="item-img">
+                    <img src="menu-img/asian main dishes/hot-sour-seabass.png" class="item-img" alt="Hot and Sour Seabass">
                     <div class="item-details">
                         <span class="eng-name">Hot & Sour Seabass</span>
                         <span class="mm-name">ကက္ကတစ်ငါးချဥ်စပ်ကြွက်ကြော်</span>
@@ -933,7 +936,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/asian main dishes/steamed-seabass.png" class="item-img">
+                    <img src="menu-img/asian main dishes/steamed-seabass.png" class="item-img" alt="Steamed Seabass with lime sauce">
                     <div class="item-details">
                         <span class="eng-name">Steamed Seabass with Lime Sauce</span>
                         <span class="mm-name">ကက္ကတစ်ငါးသံပရာပေါင်း</span>
@@ -951,7 +954,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/rice/plain-rice.png" class="item-img">
+                    <img src="menu-img/rice/plain-rice.png" class="item-img" alt="plain rice">
                     <div class="item-details">
                         <span class="eng-name">Rice</span>
                         <span class="mm-name">ထမင်း</span>
@@ -976,7 +979,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/rice/chinese-fried-rice.png" class="item-img">
+                    <img src="menu-img/rice/chinese-fried-rice.png" class="item-img" alt="chinese fried rice">
                     <div class="item-details">
                         <span class="eng-name">Chinese Fried Rice</span>
                         <span class="mm-name">ထမင်းကြော်</span>
@@ -1009,7 +1012,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/rice/tomyum-fried.png" class="item-img">
+                    <img src="menu-img/rice/tomyum-fried.png" class="item-img" alt="tom yum fried rice">
                     <div class="item-details">
                         <span class="eng-name">Tom Yum Fried Rice</span>
                         <span class="mm-name">တုံယမ်းထမင်းကြော်</span>
@@ -1042,7 +1045,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/rice/pashu-fried.png" class="item-img">
+                    <img src="menu-img/rice/pashu-fried.png" class="item-img" alt="pash fried rice">
                     <div class="item-details">
                         <span class="eng-name">Pashu Fried Rice</span>
                         <span class="mm-name">ပသျှူးထမင်းကြော်</span>
@@ -1075,7 +1078,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/rice/ygn-steamed-rice.png" class="item-img">
+                    <img src="menu-img/rice/ygn-steamed-rice.png" class="item-img" alt="Yangon Steamed rice">
                     <div class="item-details">
                         <span class="eng-name">Yangon Steamed Rice</span>
                         <span class="mm-name">ရန်ကုန်ထမင်းပေါင်း</span>
@@ -1116,7 +1119,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/vermicelli and noodle/fried-noodle.png" class="item-img">
+                    <img src="menu-img/vermicelli and noodle/fried-noodle.png" class="item-img" alt="fried noodle">
                     <div class="item-details">
                         <span class="eng-name">Fried Noodles</span>
                         <span class="mm-name">ခေါက်ဆွဲကြော်</span>
@@ -1149,7 +1152,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vermicelli and noodle/fried-vermicelli.png" class="item-img">
+                    <img src="menu-img/vermicelli and noodle/fried-vermicelli.png" class="item-img" alt="fried vermicelli">
                     <div class="item-details">
                         <span class="eng-name">Fried Vermicelli</span>
                         <span class="mm-name">ကြာဇံကြော်</span>
@@ -1182,7 +1185,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vermicelli and noodle/fried-glass-noodle.png" class="item-img">
+                    <img src="menu-img/vermicelli and noodle/fried-glass-noodle.png" class="item-img" alt="fried glass noodle">
                     <div class="item-details">
                         <span class="eng-name">Fried Glass Noodle</span>
                         <span class="mm-name">ပဲကြာဇံကြော်</span>
@@ -1223,7 +1226,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/watercress.png" class="item-img">
+                    <img src="menu-img/vegetable/watercress.png" class="item-img" alt="fried watercress">
                     <div class="item-details">
                         <span class="eng-name">Stir Fried Watercress</span>
                         <span class="mm-name">ကဇွန်းရွက်ကြော်</span>
@@ -1233,7 +1236,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/cauliflower-egg.png" class="item-img">
+                    <img src="menu-img/vegetable/cauliflower-egg.png" class="item-img" alt="fried cauliflower with egg">
                     <div class="item-details">
                         <span class="eng-name">Stir Fried Cauliflower with Egg</span>
                         <span class="mm-name">ပန်းပွင့်ကြက်ဥကြော်</span>
@@ -1243,7 +1246,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/cabbage.png" class="item-img">
+                    <img src="menu-img/vegetable/cabbage.png" class="item-img" alt=" fried cabbage">
                     <div class="item-details">
                         <span class="eng-name">Chinese Cabbage with Mushroom</span>
                         <span class="mm-name">မုန်ညှင်းဖြူမှိုကြော်</span>
@@ -1253,7 +1256,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/kailan-veg.png" class="item-img">
+                    <img src="menu-img/vegetable/kailan-veg.png" class="item-img" alt="fried kailan">
                     <div class="item-details">
                         <span class="eng-name">Stir Fried Kailan with Oyster Sauce</span>
                         <span class="mm-name">ကိုက်လန်ခရုဆီကြော်</span>
@@ -1263,7 +1266,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/bokchoy-veg.png" class="item-img">
+                    <img src="menu-img/vegetable/bokchoy-veg.png" class="item-img" fried bokchoy alt="fried bokchoy">
                     <div class="item-details">
                         <span class="eng-name">Stir Fried Bokchoy with Oyster Sauce</span>
                         <span class="mm-name">ထိုင်ဝမ်မုန်ညှင်းခရုဆီကြော်</span>
@@ -1273,7 +1276,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/mixed-veg.png" class="item-img">
+                    <img src="menu-img/vegetable/mixed-veg.png" class="item-img" alt="Mixed vegetables">
                     <div class="item-details">
                         <span class="eng-name">Mixed Vegetables with Oyster Sauce</span>
                         <span class="mm-name">သီးရွက်စုံကြော်</span>
@@ -1283,7 +1286,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/vegetable/mix-veg-tofu.png" class="item-img">
+                    <img src="menu-img/vegetable/mix-veg-tofu.png" class="item-img" alt="mixed vegetable tofu">
                     <div class="item-details">
                         <span class="eng-name">Mixed Vegetables with Japan Tofu</span>
                         <span class="mm-name">သီးရွက်စုံဂျပန်တိုဖူးကြော်</span>
@@ -1301,7 +1304,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/egg/sunny-side-up.png" class="item-img">
+                    <img src="menu-img/egg/sunny-side-up.png" class="item-img" alt="sunny side up">
                     <div class="item-details">
                         <span class="eng-name">Sunny Side Up Egg</span>
                         <span class="mm-name">ကြက်ဥကြော်</span>
@@ -1311,7 +1314,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/egg/omelette.png" class="item-img">
+                    <img src="menu-img/egg/omelette.png" class="item-img" alt="omelette">
                     <div class="item-details">
                         <span class="eng-name">Vegetable Omelette</span>
                         <span class="mm-name">ကြက်ဥမွှေကြော်</span>
@@ -1321,7 +1324,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/egg/scrambled-egg.png" class="item-img">
+                    <img src="menu-img/egg/scrambled-egg.png" class="item-img" alt="scrambled">
                     <div class="item-details">
                         <span class="eng-name">Scrambled Eggs </span>
                         <span class="mm-name">နို့ကြက်ဥကြော်</span>
@@ -1331,7 +1334,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/egg/boiled-egg.png" class="item-img">
+                    <img src="menu-img/egg/boiled-egg.png" class="item-img" alt="boiled egg">
                     <div class="item-details">
                         <span class="eng-name">Boiled Egg</span>
                         <span class="mm-name">ကြက်ဥပြုတ်</span>
@@ -1341,7 +1344,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/egg/poached-egg.png" class="item-img">
+                    <img src="menu-img/egg/poached-egg.png" class="item-img" alt="poached egg">
                     <div class="item-details">
                         <span class="eng-name">Poached Egg</span>
                         <span class="mm-name">ကြက်ဥအကာကျက်</span>
@@ -1358,7 +1361,7 @@
             <div class="menu-grid">
 
                 <div class="menu-item">
-                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img" alt="tuna sandwich">
                     <div class="item-details">
                         <span class="eng-name">Tuna Sandwich</span>
                         <span class="mm-name">တူနာဆန်ဝှစ်</span>
@@ -1368,7 +1371,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img" alt="chicken sandwich">
                     <div class="item-details">
                         <span class="eng-name">Chicken Sandwich</span>
                         <span class="mm-name">ကြက်ဆန်ဝှစ်</span>
@@ -1378,7 +1381,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/sandwich/cheese-sandwich.png" class="item-img">
+                    <img src="menu-img/sandwich/cheese-sandwich.png" class="item-img" alt="cheese sandwich">
                     <div class="item-details">
                         <span class="eng-name">Cheese Sandwich</span>
                         <span class="mm-name">ချိစ်ဆန်ဝှစ်</span>
@@ -1388,7 +1391,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/sandwich/sandwich.png" class="item-img">
+                    <img src="menu-img/sandwich/sandwich.png" class="item-img" alt="pork sandwich">
                     <div class="item-details">
                         <span class="eng-name">Pork Sandwich</span>
                         <span class="mm-name">ဝက်ဆန်ဝှစ်</span>
