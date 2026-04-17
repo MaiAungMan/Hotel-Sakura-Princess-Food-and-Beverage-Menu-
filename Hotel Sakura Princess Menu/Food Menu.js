@@ -5,23 +5,20 @@
 const mobileMenu = document.querySelector('#mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 const navActions = document.querySelector('.nav-actions');
-const body = document.querySelector('body');
+const body = document.body;
 
 if (mobileMenu) {
     mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        navActions.classList.toggle('active'); // show search in mobile
         mobileMenu.classList.toggle('is-active');
         body.classList.toggle('no-scroll');
     });
 }
 
 /* Close mobile menu when link clicked */
-
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
-        navActions.classList.remove('active');
         mobileMenu.classList.remove('is-active');
         body.classList.remove('no-scroll');
     });
@@ -38,17 +35,14 @@ const searchInput = document.getElementById('search-input');
 
 if (searchBtn) {
     searchBtn.addEventListener('click', (e) => {
-
         if (window.innerWidth <= 768) {
             e.preventDefault();
-
             searchContainer.classList.toggle('active');
 
             if (searchContainer.classList.contains('active')) {
                 searchInput.focus();
             }
         }
-
     });
 }
 
@@ -60,13 +54,10 @@ if (searchBtn) {
 const menuItems = document.querySelectorAll('.menu-item');
 
 if (searchInput) {
-
     searchInput.addEventListener('input', () => {
-
         const searchText = searchInput.value.toLowerCase().trim();
 
         menuItems.forEach(item => {
-
             const engName = item.querySelector('.eng-name')?.textContent.toLowerCase() || '';
             const mmName = item.querySelector('.mm-name')?.textContent.toLowerCase() || '';
             const price = item.querySelector('.price')?.textContent.toLowerCase() || '';
@@ -77,94 +68,60 @@ if (searchInput) {
                 price.includes(searchText);
 
             item.style.display = isMatch ? 'block' : 'none';
-
         });
-
-
-        /* Hide empty categories */
 
         document.querySelectorAll('.category-section').forEach(category => {
-
-            const visibleItems =
-                category.querySelectorAll('.menu-item:not([style*="display: none"])');
-
-            category.style.display =
-                visibleItems.length > 0 ? 'block' : 'none';
-
+            const visibleItems = category.querySelectorAll('.menu-item:not([style*="display: none"])');
+            category.style.display = visibleItems.length > 0 ? 'block' : 'none';
         });
 
-
-        /* Hide menu headers */
-
         ['.foodmenu', '.beveragemenu'].forEach(menuClass => {
-
             const menu = document.querySelector(menuClass);
 
             if (menu && menu.querySelector('header')) {
-
                 const hasVisible =
                     menu.querySelectorAll('.menu-item:not([style*="display: none"])').length > 0;
 
-                menu.querySelector('header').style.display =
-                    hasVisible ? 'block' : 'none';
-
+                menu.querySelector('header').style.display = hasVisible ? 'block' : 'none';
             }
-
         });
 
-
-        /* Hide About section while searching */
-
         const aboutSection = document.getElementById('about');
-
         if (aboutSection) {
             aboutSection.style.display = searchText ? 'none' : 'block';
         }
-
     });
-
 }
 
 
 /* ==========================================
-   4. MENU ITEM OPTIONS (Accordion)
+   4. MENU ITEM OPTIONS
 ========================================== */
 
 function toggleOptions(header) {
-
     const menuItem = header.closest('.menu-item');
     const optionsList = header.nextElementSibling;
     const arrow = header.querySelector('.arrow');
 
     const isOpen = optionsList.classList.contains('show');
 
-    /* Close other items */
-
     document.querySelectorAll('.options').forEach(opt => opt.classList.remove('show'));
     document.querySelectorAll('.arrow').forEach(ar => ar.classList.remove('rotate'));
     document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('open'));
 
     if (!isOpen) {
-
         optionsList.classList.add('show');
         arrow.classList.add('rotate');
         menuItem.classList.add('open');
 
-        /* Smooth scroll */
-
-        const navbarHeight =
-            document.querySelector('.navbar')?.offsetHeight || 0;
-
-        const itemTop =
-            menuItem.getBoundingClientRect().top + window.pageYOffset;
+        const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+        const itemTop = menuItem.getBoundingClientRect().top + window.pageYOffset;
 
         window.scrollTo({
             top: itemTop - navbarHeight - 10,
             behavior: 'smooth'
         });
-
     }
-
 }
 
 
@@ -175,22 +132,15 @@ function toggleOptions(header) {
 let cart = [];
 
 function toggleCart() {
-
     document.getElementById("cart-sidebar").classList.toggle("active");
 
     const overlay = document.getElementById("cart-overlay");
-
     if (overlay) overlay.classList.toggle("active");
 
     body.classList.toggle('no-scroll');
-
 }
 
-
-/* Add item to cart */
-
 function addToCart(name, price) {
-
     const existingItem = cart.find(item => item.name === name);
 
     if (existingItem) {
@@ -204,25 +154,14 @@ function addToCart(name, price) {
     }
 
     updateCart();
-
 }
-
-
-/* Remove item */
 
 function removeFromCart(itemName) {
-
     cart = cart.filter(item => item.name !== itemName);
-
     updateCart();
-
 }
 
-
-/* Update cart UI */
-
 function updateCart() {
-
     const cartItemsContainer = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
     const cartCount = document.getElementById("cart-count");
@@ -230,24 +169,18 @@ function updateCart() {
     cartItemsContainer.innerHTML = "";
 
     if (cart.length === 0) {
-
-        cartItemsContainer.innerHTML =
-            `<p class="empty-msg">Your cart is empty.</p>`;
-
+        cartItemsContainer.innerHTML = `<p class="empty-msg">Your cart is empty.</p>`;
         cartTotal.innerText = 0;
         cartCount.innerText = 0;
-
         return;
     }
 
     let total = 0;
 
     cart.forEach(item => {
-
         total += item.price * item.quantity;
 
         const itemDiv = document.createElement('div');
-
         itemDiv.className = 'cart-item';
 
         itemDiv.innerHTML = `
@@ -269,19 +202,16 @@ function updateCart() {
         `;
 
         cartItemsContainer.appendChild(itemDiv);
-
     });
 
     cartTotal.innerText = total.toLocaleString();
-
-    cartCount.innerText =
-        cart.reduce((sum, item) => sum + item.quantity, 0);
-
-        function makeCall() {
-  // confirm box (optional)
-  if (confirm("444 ကိုဖုန်းခေါ်မလား?")) {
-    window.location.href = "tel:444";
-  }
+    cartCount.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
 }
+
+    function makeCall() {
+        if (confirm("444 ကိုဖုန်းခေါ်မလား?")) {
+            window.location.href = "tel:444";
+        }
+
 
 }

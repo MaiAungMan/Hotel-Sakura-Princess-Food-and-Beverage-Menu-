@@ -663,104 +663,174 @@ h1::after {
    MOBILE (max-width:768px)
 ========================= */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .navbar {
+    position: relative;
+    height: auto;
+    padding: 10px 12px;
+  }
 
-/* Stack navbar */
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 0;
+    height: auto;
+    width: 100%;
+  }
 
-.navbar {
-    height: 100PX;
-    padding: 10px 0;
-}
+  /* --- Logo & Hotel Name (With Fade-out) --- */
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    flex-shrink: 0;
+  }
 
-.nav-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-    margin-top: -40px;
-    size: 10rem;
-    height: 50px;
-}
+  .hotel-name {
+    opacity: 1;
+    visibility: visible;
+    max-width: 250px; /* နေရာယူမှုကို ချိန်ညှိရန် */
+    transition: opacity 0.4s ease, max-width 0.4s ease, visibility 0.4s;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 
-/* Logo top */
-.logo{
-    order:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-}
+  .logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+  }
 
-/* Search under logo */
-.search-container{
-    order:2;
-    display:flex;
-    width:60%;
-    justify-content:flex-start;
+  .hotel-name {
+    position: static;
+    margin-left: 8px;
+  }
+
+  /* Search ကို Focus လုပ်ချိန်မှာ Logo နဲ့ နာမည်ကို ဖျောက်မည့် Logic */
+  .nav-container:has(.search-container:focus-within) .hotel-name {
+    opacity: 0;
+    visibility: hidden;
+    max-width: 0;
+    margin: 0;
+  }
+
+  /* --- Search Container (Expanding) --- */
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-grow: 1; /* Search ချဲ့နိုင်ရန် နေရာပေးခြင်း */
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    width: 45px; /* ပုံမှန် size */
+    height: 38px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 12px;
+    overflow: hidden;
+    background: #f9f9f9;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .search-container:focus-within {
+    width: 100%; /* နေရာအပြည့်ချဲ့မည် */
+    border-color: #ff69b4;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  #search-input {
+    width: 100%;
+    padding: 6px 5px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s; /* နာမည်ပျောက်မှ စာရိုက်ကွက်ပေါ်လာရန် */
+  }
+
+  .search-container:focus-within #search-input {
+    opacity: 1;
+  }
+  .search-container:focus-within .search-btn {
+    position: relative;
+    left: 30%;
+  }
+
+  .search-btn {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+  }
+
+  /* --- Cart & Menu Toggle --- */
+  .cart-trigger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cart-count {
     position: absolute;
-    top: 60px;
-    left: 10px;
-}
+    top: -6px;
+    right: -6px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
 
-/* Cart + menu row */
-.nav-actions{
-    order:3;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    width:100%;
-}
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 
-/* Cart icon */
-.cart-trigger{
-    order:1;
+  /* --- Navigation Links (Mobile Menu) --- */
+  .nav-links {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     position: absolute;
-    top: 60px;
-    right: 50px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--sakura-pink, #ffc0cb);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
 }
 
-/* Menu toggle */
-.menu-toggle{
-    order:2;
-    position: absolute;
-    top: 70px;
-    right: 10px;
-}
 
-/* Hide nav links initially */
-.nav-links{
-    display:none;
-    width:100%;
-}
-
-/* Show menu when active */
-.nav-links.active{
-    order:4;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    gap:20px;
-    width:100%;
-    background:var(--sakura-pink);
-    position: absolute;
-    top: 100px;
-}
-
-/* Search animation */
-#search-input{
-    width:100%;
-    padding:6px 10px;
-}
-
-.menu-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap:20px;
-    padding:30px;
-}
-
-}
 
 
 
