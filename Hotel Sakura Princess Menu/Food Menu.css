@@ -615,8 +615,9 @@ h1::after {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    padding: 10px 0;
+    padding: 5px 0;
     border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
 }
 
 .options button {
@@ -665,10 +666,20 @@ h1::after {
 
 @media (max-width: 768px) {
   .navbar {
-    position: relative;
-    height: auto;
+    position: fixed; /* အပေါ်မှာ အမြဲကပ်နေစေရန် */
+    top: 0;         /* ထိပ်ဆုံးမှာ ကပ်ထားရန် */
+    left: 0;
+    width: 100%;    /* ဘေးအပြည့် နေရာယူရန် */
     padding: 10px 12px;
-  }
+    z-index: 1000;  /* Menu items တွေရဲ့ အပေါ်မှာ အမြဲရှိနေစေရန် */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Scroll လုပ်တဲ့အခါ ထင်ထင်ရှားရှားဖြစ်အောင် အရိပ်ထည့်ခြင်း */
+}
+
+/* Navbar က နေရာယူသွားတဲ့အတွက် အောက်က content တွေ 
+   Navbar အောက်ထဲ ရောက်မသွားအောင် Body ကို အပေါ်ကနေ နည်းနည်းခွာပေးရပါမယ် */
+body {
+    padding-top: 70px; /* Navbar ရဲ့ ခန့်မှန်းခြေ အမြင့်အတိုင်း ခွာပေးပါ */
+}
 
   .nav-container {
     display: flex;
@@ -703,11 +714,11 @@ h1::after {
     width: 42px;
     height: 42px;
     object-fit: cover;
+    margin-left: -15px;
   }
 
   .hotel-name {
-    position: static;
-    margin-left: 8px;
+    margin-left: -15px;
   }
 
   /* Search ကို Focus လုပ်ချိန်မှာ Logo နဲ့ နာမည်ကို ဖျောက်မည့် Logic */
@@ -722,6 +733,7 @@ h1::after {
   .nav-actions {
     display: flex;
     align-items: center;
+    margin-left: -9px;
     justify-content: flex-end;
     gap: 8px;
     flex-grow: 1; /* Search ချဲ့နိုင်ရန် နေရာပေးခြင်း */
@@ -730,8 +742,8 @@ h1::after {
   .search-container {
     display: flex;
     align-items: center;
-    width: 45px; /* ပုံမှန် size */
-    height: 38px;
+    width: 30px; 
+    height: 30px;
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 5px 12px;
@@ -741,7 +753,7 @@ h1::after {
   }
 
   .search-container:focus-within {
-    width: 100%; /* နေရာအပြည့်ချဲ့မည် */
+    width: 100%; 
     border-color: #ff69b4;
     background: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -768,6 +780,9 @@ h1::after {
 
   .search-btn {
     flex-shrink: 0;
+    position: relative;
+    right: 13px;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
@@ -828,6 +843,11 @@ h1::after {
     align-items: center;
     z-index: 1000;
   }
+
+  .menu-grid {
+        margin: 0 50px;
+    }
+
 }
 
 
