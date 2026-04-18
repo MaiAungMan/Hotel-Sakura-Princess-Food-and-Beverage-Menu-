@@ -90,6 +90,7 @@ if (searchInput) {
         if (aboutSection) {
             aboutSection.style.display = searchText ? 'none' : 'block';
         }
+
     });
 }
 
@@ -206,12 +207,5 @@ function updateCart() {
 
     cartTotal.innerText = total.toLocaleString();
     cartCount.innerText = cart.reduce((sum, item) => sum + item.quantity, 0);
-}
-
-    function makeCall() {
-        if (confirm("444 ကိုဖုန်းခေါ်မလား?")) {
-            window.location.href = "tel:444";
-        }
-
 
 }

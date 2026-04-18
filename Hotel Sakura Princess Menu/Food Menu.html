@@ -66,7 +66,7 @@
             <span>Total:</span>
             <span><span id="cart-total">0</span> MMK</span>
         </div>
-    <button class="checkout-btn" onclick="window.location.href='tel:444'">
+    <button class="checkout-btn">
         Please Dial Hotel Phone 444 
         <strong>အော်တာမှာလိုပါက ဟိုတယ်ဖုန်း 444 ကိုဖုန်းခေါ်နိုင်ပါသည်</strong>
     </button>    
@@ -83,7 +83,7 @@
             <span>စားသောက်ခန်း ဝန်ဆောင်မှုများ</span>
         </h2>
 
-        <div class="diningservice">
+        <div class="diningservice" id="contact">
 
             <div class="card">
                 <p>
@@ -1429,83 +1429,127 @@
     
     <section class="menu">
         
+        <!-- wine -->
+        <div class="category-section">
+            <h2>Wine</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                <img src="menu-img/wine/aythaya red.png" alt="Aythaya Red Wine" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Aythaya Red Wine</span>
+                        <span class="mm-name">Aythaya (ဝိုင်နီ)</span>
+                        <span class="price">40,000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Aythaya Red Wine', 40000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/wine/aythaya white.png" alt="Aythaya White Wine" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Aythaya White Wine</span>
+                        <span class="mm-name">Aythaya (ဝိုင်ဖြူ)</span>
+                        <span class="price">40,000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('Aythaya White Wine', 40000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/wine/labodega red.png" alt="La Bodega Red Wine" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">La Bodega Red Wine</span>
+                        <span class="mm-name">La Bodega (ဝိုင်နီ)</span>
+                        <span class="price">45,000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('La Bodega Red Wine', 45000)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="menu-img/wine/labodega white.png" alt="La Bodega White Wine" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">La Bodega White Wine</span>
+                        <span class="mm-name">La Bodega (ဝိုင်ဖြူ)</span>
+                        <span class="price">45,000 MMK</span>
+                    </div>
+                        <button class="add-to-cart" onclick="addToCart('La Bodega White Wine', 45000)">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+
         <!-- beer -->
         <div class="category-section">
             <h2>Beer</h2>
             <div class="menu-grid">
                 <div class="menu-item">
-                    <img src="menu-img/beer/tiger-bottle.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/tiger-bottle.png" alt="Tiger Beer Bottle" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Tiger Beer</span>
                         <span class="mm-name">Tiger ဘီယာ</span>
-                        <span class="price">75000 MMK</span>
+                        <span class="price">7500 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Tiger Beer', 75000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Tiger Beer Bottle', 7500)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="menu-img/beer/tiger-can.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/tiger-can.png" alt="Tiger Beer Can" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Tiger Beer</span>
                         <span class="mm-name">Tiger ဘီယာ</span>
                         <span class="price">6000 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Tiger Beer', 6000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Tiger Beer Can', 6000)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="menu-img/beer/abc-bottle.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/abc-bottle.png" alt="ABC Beer Bottle" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">ABC Beer</span>
                         <span class="mm-name">ABC ဘီယာ</span>
-                        <span class="price">75000 MMK</span>
+                        <span class="price">7500 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('ABC Beer', 75000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('ABC Beer Bottle', 7500)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="menu-img/beer/abc-can.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/abc-can.png" alt="ABC Beer Can" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">ABC Beer</span>
                         <span class="mm-name">ABC ဘီယာ</span>
                         <span class="price">6000 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('ABC Beer', 6000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('ABC Beer Can', 6000)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="menu-img/beer/heineken-bottle.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/heineken-bottle.png" alt="Heineken Beer Bottle" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Heineken Beer</span>
                         <span class="mm-name">Heineken ဘီယာ</span>
-                        <span class="price">75000 MMK</span>
+                        <span class="price">7500 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Heineken Beer', 75000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Heineken Beer Bottle', 7500)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="menu-img/beer/heineken-can.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/heineken-can.png" alt="Heineken Beer Can" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Heineken Beer</span>
                         <span class="mm-name">Heineken ဘီယာ</span>
                         <span class="price">6000 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Heineken Beer', 6000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Heineken Beer Can', 6000)">Add to Cart</button>
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/beer/carlsberg-can.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/carlsberg-can.png" alt="Carlsberg Beer Can" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Carlsberg Beer</span>
                         <span class="mm-name">Carlsberg ဘီယာ</span>
                         <span class="price">6000 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Carlsberg Beer', 6000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Carlsberg Beer Can', 4500)">Add to Cart</button>
                 </div>
 
                 <div class="menu-item">
-                    <img src="menu-img/beer/tuborg-can.png" alt="Beer" class="item-img">
+                    <img src="menu-img/beer/tuborg-can.png" alt="Tuborg Beer Can" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Tuborg Beer</span>
                         <span class="mm-name">Tuborg ဘီယာ</span>
                         <span class="price">4500 MMK</span>
                     </div>
-                        <button class="add-to-cart" onclick="addToCart('Carlsberg Beer', 6000)">Add to Cart</button>
+                        <button class="add-to-cart" onclick="addToCart('Tuborg Beer Can', 6000)">Add to Cart</button>
                 </div>
 
             </div>
@@ -1592,7 +1636,7 @@
                         <button class="add-to-cart" onclick="addToCart('Watermelon Fresh Juice', 4500)">Add to Cart</button>
                 </div>
 
-                <div class="menu-item">
+                <!-- <div class="menu-item">
                     <img src="menu-img/juice/strawberry-juice.png" alt="Strawberry Juice" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Strawberry Fresh Juice</span>
@@ -1600,7 +1644,7 @@
                         <span class="price">4500 MMK</span>
                     </div>
                         <button class="add-to-cart" onclick="addToCart('Strawberry Fresh Juice', 4500)">Add to Cart</button>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -1652,43 +1696,28 @@
             <h2>Cigarettes & Lighter</h2>
 
             <div class="menu-grid">
-                <!-- Cigarettes -->
-                        <div class="menu-item">
-                            <img src="menu-img/cigarettes and lighter/cigarettes.png"  alt="Cigarettes" class="item-img">
-                            <div class="item-details">
-                                <span class="eng-name">Mevius</span>
-                                <span class="mm-name"></span>
-                                <div class="menu-options">
-                                    <div class="options-header" onclick="toggleOptions(this)">
-                                        <span>Options(ရွေးချယ်စရာများ)</span>
-                                        <i class="fa-solid fa-chevron-down arrow"></i>
-                                    </div>
-                                    <ul class="options">
-                                        <li>
-                                            Original Blue (02) <span class="price">9000 MMK</span>
-                                            <button class="add-to-cart" onclick="addToCart('Original Blue (02)', 9000)">Add to Cart</button>
-                                        </li>
-                                        <!-- <li>
-                                            Sky Blue (04) <span class="price">9000 MMK</span>
-                                            <button class="add-to-cart" onclick="addToCart('Sky Blue (04)', 9000)">Add to Cart</button>
-                                        </li> -->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>        
-                <!-- Lighter -->
                 <div class="menu-item">
-                    <img src="menu-img/cigarettes and lighter/lighter.png" alt="Lighter" class="item-img">
+                    <img src="menu-img/cigarettes and lighter/cigarettes.png" alt="Mevius Cigarettes" class="item-img">
+                    <div class="item-details">
+                        <span class="eng-name">Mevius</span>
+                        <span class="mm-name">Mevius ဆေးလိပ်</span>
+                        <span class="price">9,000 MMK</span>
+                    </div> 
+                        <button class="add-to-cart" onclick="addToCart('Mevius Cigarettes', 9000)">Add to Cart</button>
+                </div> 
+                    <div class="menu-item">
+                        <img src="menu-img/cigarettes and lighter/lighter.png" alt="Lighter" class="item-img">
                     <div class="item-details">
                         <span class="eng-name">Lighter</span>
                         <span class="mm-name">မီးခြစ်</span>
-                        <span class="price">1200 MMK</span>
+                        <span class="price">1,200 MMK</span>
                     </div>
                         <button class="add-to-cart" onclick="addToCart('Lighter', 1200)">Add to Cart</button>
-                </div>
-            </div>
+                    </div>
+            </div> 
         </div>
-</div>
+
+    </div>
 
     </section> 
 </div>
